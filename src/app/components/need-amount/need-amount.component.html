@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <form [formGroup]="needAmountForm" class="form" (ngSubmit)="define()">
+      <div>
+        <label for="">Номенклатурный номер</label>
+        <input type="text" formControlName="number" nz-input />
+      </div>
+      <button nz-button nzType="primary">Рассчитать</button>
+    </form>
+  </div>
+  

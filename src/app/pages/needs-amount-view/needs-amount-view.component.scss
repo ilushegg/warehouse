@@ -1,0 +1,48 @@
+.needAmount {
+    margin-bottom: 10px;
+}
+
+.chart {
+    max-width: 800px;
+    margin: 0 auto;
+
+    &__histo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__legend-y {
+            writing-mode: vertical-lr;
+            transform: scale(-1, -1);
+            color: #6C757D;
+        }
+        &__legend-x {
+            display: flex;
+            justify-content: center;
+            color: #6C757D;
+        }
+    }
+
+    &__circle {
+        margin: 40px 0;
+        max-width: 400px;
+        &__legend-y {
+            writing-mode: vertical-lr;
+            transform: scale(-1, -1);
+            color: #6C757D;
+        }
+        &__legend-x {
+            display: flex;
+            justify-content: center;
+            color: #6C757D;
+        }
+    }
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+
+    & nz-collapse {
+        margin: 25px 0;
+    }
+}

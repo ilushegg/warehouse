@@ -1,0 +1,32 @@
+@import 'src/styles.scss';
+
+.wrapper {
+
+  
+}
+
+.header{
+background-color: $primary-color;
+margin-bottom: 15px;
+@include box-shadow;
+
+  &__list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  & li {
+    & a {
+      padding: 15px;
+      display: block;
+      color: #fff;
+
+      &:hover {
+        background-color: #fff;
+        color: $primary-color;
+      }
+    }
+    
+
+  }
+}
+}

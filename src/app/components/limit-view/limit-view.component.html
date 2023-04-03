@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <form nz-form [formGroup]="limitForm" class="form">
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Номенклатурный номер</label>
+          <input type="text" formControlName="number" nz-input />
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Количество</label>
+          <input type="text" formControlName="quantity" nz-input  nz-tooltip/>
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" [disabled]="!limitForm.valid" (click)="edit()">Редактировать</button>
+    <button nz-button nzType="primary" (click)="delete()">Удалить</button>
+  </form>
+</div>
+
+<ng-template #error>
+  <label for="">Пожалуйста, заполните это поле!</label>
+</ng-template>

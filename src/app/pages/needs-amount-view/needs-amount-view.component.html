@@ -1,0 +1,67 @@
+<app-search [entities]="needsAmount" (entitiesChanged)="changed($event)"></app-search>
+
+<div class="wrapper">
+    
+    <button nz-button nzType="default" (click)="showModal()">Сформировать отчет</button>
+    <nz-collapse>
+        <nz-collapse-panel
+      nzHeader="Гистограмма"
+      [nzActive]="true"
+    >
+    <div class="chart">
+        <div class="chart__histo">
+            <div class="chart__histo__legend-y">Количество</div>
+            <p-chart style="width: 100%;" type="bar" [data]="data" [options]="options"></p-chart>
+        </div>
+        <div class="chart__histo__legend-x">Номенклатурный номер</div>
+    </div>
+    </nz-collapse-panel>
+    <nz-collapse-panel
+      nzHeader="Круговая диаграмма"
+      [nzActive]="true"
+      >
+    <div class="chart">
+        <div class="chart__circle">
+            <div class="chart__histo__legend-x">Номенклатурный номер</div>
+            <p-chart type="pie" [data]="circleData" [options]="circleOptions"></p-chart>
+        </div>
+    </div>
+</nz-collapse-panel>
+</nz-collapse>
+
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="Отчет" nzWidth="800px" (nzOnCancel)="handleCancel()" (nzOnOk)="response()" [nzModalType]="'default'">
+      <ng-container *nzModalContent>
+        <nz-table #basicTable [nzData]="needsAmount" [nzShowPagination]="false">
+            <thead>
+              <tr>
+                <th>Номенклатурный номер</th>
+                <th>Нужно</th>
+                <th>Есть на складе</th>
+                <th>Превышает лимит на *</th>
+                <th>Превышает лимит на (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of basicTable.data">
+                <td>{{data.number}}</td>
+                <td>{{data.need}}</td>
+                <td>{{data.exist}}</td>
+                <td>{{data.limit}}</td>
+                <td>{{data.limitPercent > 0 ? data.limitPercent : 'Не превышает лимит'}}</td>
+              </tr>
+            </tbody>
+          </nz-table>
+          <div>
+            * - Если число отрицательное - значит количество требуемых предметов не превышает количество существующих предметов на складе 
+          </div>
+      </ng-container>
+    </nz-modal>
+
+</div>
+  
+
+
+
+<div *ngFor="let needAmount of needsAmount" class="needAmount">
+    <app-need-amount-view [needAmount]="needAmount"></app-need-amount-view>
+</div>

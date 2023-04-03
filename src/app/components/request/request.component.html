@@ -1,0 +1,60 @@
+
+<div class="wrapper">
+  <form nz-form [formGroup]="requestForm" class="form" (ngSubmit)="save()">
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Дата заявки</label>
+          <nz-date-picker formControlName="date" ></nz-date-picker>
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Шифр предприятия</label>
+          <input type="text" formControlName="companyCode" nz-input />
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Номенклатурный номер запрашиваемого материала</label>
+      <input type="text" formControlName="number" nz-input />
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Код единицы измерения</label>
+          <input type="text" formControlName="measureCode" nz-input />
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Количество</label>
+          <input type="text" formControlName="quantity" nz-input  nz-tooltip/>
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="error">
+        <div>
+          <label for="">Цена за единицу</label>
+          <input type="text" formControlName="price" nz-input  nz-tooltip/>
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <button [disabled]="!requestForm.valid" nz-button nzType="primary">Добавить</button>
+  </form>
+</div>
+
+
+
+<ng-template #error>
+  <label for="">Пожалуйста, заполните это поле!</label>
+</ng-template>

@@ -1,0 +1,6 @@
+<app-search [entities]="limits" (entitiesChanged)="changed($event)"></app-search>
+
+ 
+ <div *ngFor="let limit of limits" class="limit">
+    <app-limit-view [limit]="limit"></app-limit-view>
+  </div>

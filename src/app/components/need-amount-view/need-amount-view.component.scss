@@ -1,0 +1,23 @@
+@import '/src/styles.scss';
+
+.wrapper {
+  max-width: 800px;
+  border-radius: 2px;
+  @include box-shadow;
+  padding: 25px;
+  margin: 0 auto;
+}
+
+.form {
+  & div {
+    margin-bottom: 10px;
+    & label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  & button {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,6 @@
+ 
+  <app-search [entities]="requests" (entitiesChanged)="changed($event)"></app-search>
+ 
+ <div *ngFor="let request of requests" class="request">
+    <app-request-view [request]="request"></app-request-view>
+  </div>

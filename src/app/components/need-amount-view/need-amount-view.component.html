@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <form [formGroup]="needAmountForm" class="form">
+      <div>
+        <label for="">Номенклатурный номер</label>
+        <input type="text" formControlName="number" nz-input />
+      </div>
+      <div>
+        <label for="">Есть на складе</label>
+        <input type="text" formControlName="exist" nz-input />
+      </div>
+      <div>
+        <label for="">Надо</label>
+        <input type="text" formControlName="need" nz-input />
+      </div>
+      <div>
+        <label for="">Лимит</label>
+        <input type="text" formControlName="limit" nz-input />
+      </div>
+      <div>
+        <label for="">Лимит(%)</label>
+        <input type="text" formControlName="limitPercent" nz-input />
+      </div>
+    </form>
+  </div>
+  
